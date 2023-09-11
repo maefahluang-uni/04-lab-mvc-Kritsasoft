@@ -2,25 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concert List</title>
+    <title>List of Concerts</title>
 </head>
 <body>
-    <h1>Concert List</h1>
-    <!-- TODO: Add list of concerts -->
-    <ul>
-        <th:each="concert : ${concertsList}">
-            <li>
-                <strong>Title:</strong> <span th:text="${concert.title}"></span><br>
-                <strong>Description:</strong> <span th:text="${concert.description}"></span><br>
-                <strong>Date:</strong> <span th:text="${concert.date}"></span><br>
-                
-                <!-- Delete link for each concert -->
-                <a th:href="@{'/delete-concert/' + ${concert.id}}">Delete</a>
-            </li>
-            <br>
-        </th:each>
-    </ul>
-    <!-- TODO: show delete link for each concert -->
+    <h1>List of Concerts</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Artist</th>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Actions</th>
+        </tr>
+        <!-- Loop through the concerts and display them -->
+        <tr th:each="concert : ${concerts}">
+            <td th:text="${concert.id}"></td>
+            <td th:text="${concert.artist}"></td>
+            <td th:text="${concert.date}"></td>
+            <td th:text="${concert.venue}"></td>
+            <td>
+                <!-- Link to delete a concert by its ID -->
+                <a th:href="@{/delete-concert/{id}(id=${concert.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <!-- Link to add a new concert -->
+    <a th:href="@{/add-concert}">Add a New Concert</a>
+    <!-- Link to delete all concerts -->
+    <a th:href="@{/delete-concert}">Delete All Concerts</a>
 </body>
 </html>
