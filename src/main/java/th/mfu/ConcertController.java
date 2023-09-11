@@ -26,7 +26,7 @@ public class ConcertController {
     // Initialize a date format for date input
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
-    // TODO: add initbinder to convert date
+    // TODO: add initbinder to convert date input
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
