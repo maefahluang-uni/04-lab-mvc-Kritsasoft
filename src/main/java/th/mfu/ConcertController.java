@@ -51,7 +51,6 @@ public class ConcertController {
         concert.setId(nextId);
         concerts.put(nextId, concert);
         nextId++;
-        // TODO: increment nextId
         // TODO: redirect to list concerts
         return "redirect:/concerts";
     }
