@@ -11,6 +11,7 @@ public class Concert {
     private Date date;
     private String description;
     private String artist;
+    private int venue;
 
     public Concert() {
     }
@@ -68,5 +69,11 @@ public class Concert {
     }
     public void setArtist(String artist) {
         this.artist = artist;
+    }
+    public int getVenue() {
+        return venue;
+    }
+    public void setVenue(int venue) {
+        this.venue = venue;
     }
 }
