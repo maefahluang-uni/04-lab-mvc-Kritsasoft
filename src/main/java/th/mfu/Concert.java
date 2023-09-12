@@ -10,6 +10,7 @@ public class Concert {
     private String performer;
     private Date date;
     private String description;
+    private String artist;
 
     public Concert() {
     }
@@ -61,5 +62,11 @@ public class Concert {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    public String getArtist() {
+        return artist;
+    }
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 }
