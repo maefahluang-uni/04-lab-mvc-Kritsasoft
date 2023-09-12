@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ConcertController {
     // TODO: create hashmap of concerts for storing data
     private HashMap<Integer, Concert> concerts = new HashMap<Integer, Concert>();
-    private int nextId = 1; // To generate unique IDs for concerts
+    private int nextId = 1; 
 
     // Initialize a date format for date input
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
